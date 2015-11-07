@@ -1,0 +1,29 @@
+{
+  "name": "npm-arduino-builder",
+  "version": "1.0.7",
+  "description": "Installs Arduino's arduino-builder via npm.",
+  "main": "./index.js",
+  "author": "Paulo Barcelos",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Quirkbot/npm-arduino-avr-gcc.git"
+  },
+  "binary": {
+    "module_name": "arduino_builder",
+    "module_path": "./arduino-builder/",
+    "remote_path": "./npm-arduino/",
+    "package_name": "{module_name}-{version}-{platform}-{arch}.tar.bz",
+    "host": "https://s3.amazonaws.com"
+  },
+  "dependencies": {
+    "node-pre-gyp": "^0.6.15"
+  },
+  "bundledDependencies": [
+    "node-pre-gyp"
+  ],
+  "scripts": {
+    "install": "node-pre-gyp install",
+    "test": "node index.js",
+    "prepublish": "npm ls"
+  }
+}
